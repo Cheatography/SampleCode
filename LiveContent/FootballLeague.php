@@ -19,7 +19,7 @@
 
     // Define variables for Yahoo. The URL to be collected, and XPATH to find the content.
         $url = "http://news.bbc.co.uk/sport1/hi/football/eng_prem/table/default.stm";
-        $xpath = "//table[@class=\\'fulltable\\']//tr[@class=\\'r1\\' or @class=\\'r2\\']"; // Any table row whose classes include "club-row" within any table body within any table with class "leagueTable".
+        $xpath = "//table[@class=\\'fulltable\\']//tr[@class=\\'r1\\' or @class=\\'r2\\']"; // Any table row whose class is "r1" or "r2" within any table with class "fulltable".
 
     // Yahoo Request, including YQL. You shouldn't need to change this.
         $yql = "http://query.yahooapis.com/v1/public/yql?q=SELECT%20*%20FROM%20html%20WHERE%20url%3D'" . urlencode($url) . "'%20AND%20xpath%3D'" . urlencode($xpath) . "'&format=json";
